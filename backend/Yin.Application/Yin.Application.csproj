@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>../Yin.Host/Yin.Application.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

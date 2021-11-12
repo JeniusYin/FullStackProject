@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>../Yin.HttpApi/Yin.Application.Contracts.xml</DocumentationFile>
+    <DocumentationFile>../Yin.Host/Yin.Application.Contracts.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>../Yin.HttpApi/Yin.Application.Contracts.xml</DocumentationFile>
+    <DocumentationFile>../Yin.Host/Yin.Application.Contracts.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
