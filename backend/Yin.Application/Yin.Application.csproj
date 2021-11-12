@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Yin.Application.Contracts\Yin.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Yin.Domain\Yin.Domain.csproj" />
+    <ProjectReference Include="..\Yin.EntityFrameworkCore\Yin.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Yin.Infrastructure\Yin.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CommandHandlers\User\" />
+    <Folder Include="IntegrationEvents\Events\" />
+    <Folder Include="IntegrationEvents\Handlers\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>

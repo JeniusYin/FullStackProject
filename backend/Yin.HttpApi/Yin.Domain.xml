@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yin.Domain</name>
+    </assembly>
+    <members>
+        <member name="P:Yin.Domain.Interfaces.IRepository`1.UnitOfWork">
+            <summary>
+            UnitOfWork
+            </summary>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.Add(`0)">
+            <summary>
+            添加
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.AddRange(System.Collections.Generic.List{`0})">
+            <summary>
+            AddRange
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.GetAll">
+            <summary>
+            获取列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.GetFirstOrDefaultNoTracking(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String[])">
+            <summary>
+            GetFirstOrDefaultNoTracking
+            </summary>
+            <param name="express"></param>
+            <param name="includes">导航属性</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.GetFirstOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String[])">
+            <summary>
+            GetFirstOrDefault
+            </summary>
+            <param name="express"></param>
+            <param name="includes">导航属性</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.GetAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String[])">
+            <summary>
+            获取列表
+            </summary>
+            <param name="express"></param>
+            <param name="includes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.GetAllWithNoTracking(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String[])">
+            <summary>
+            获取列表
+            </summary>
+            <param name="express"></param>
+            <param name="includes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IRepository`1.Exist(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="express"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IUnitOfWork.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            异步saveChange
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yin.Domain.Interfaces.IUnitOfWork.SaveEntitiesAsync(System.Threading.CancellationToken)">
+            <summary>
+            发送领域事件 保存到数据库
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Yin.Domain.SeedWork.Entity.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Yin.Domain.SeedWork.Entity.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Yin.Domain.SeedWork.Entity.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Yin.Domain.SeedWork.Entity`1.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Yin.Domain.SeedWork.Entity`1.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Yin.Domain.SeedWork.Entity`1.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Yin.Domain.SeedWork.ValueObject">
+            <summary>
+            值对象
+            </summary>
+        </member>
+    </members>
+</doc>
