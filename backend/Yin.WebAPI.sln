@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yin.Host", "Yin.Host\Yin.Host.csproj", "{6EBD561F-CFB2-4D38-8752-A4B0A72C0E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yin.API", "Yin.API\Yin.API.csproj", "{6EBD561F-CFB2-4D38-8752-A4B0A72C0E21}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yin.Domain", "Yin.Domain\Yin.Domain.csproj", "{74CBC260-C362-435F-B58C-92EFF32CA6BF}"
 EndProject
