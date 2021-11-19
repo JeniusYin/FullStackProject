@@ -10,6 +10,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using Yin.Domain.AggregateRoot.AdminUserAggregate;
 
 namespace Yin.EntityFrameworkCore.Context
 {
@@ -43,6 +44,10 @@ namespace Yin.EntityFrameworkCore.Context
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
         }
+
+        #region DbSet
+        public DbSet<AdminUser> AdminUsers { get; set; }
+        #endregion
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
         {

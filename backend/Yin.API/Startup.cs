@@ -1,16 +1,17 @@
 using Autofac;
 using Yin.Application.AutoMapper;
-using Yin.HttpCommon.AutoFacDI;
-using Yin.HttpCommon.Logger;
-using Yin.HttpCommon.Middleware;
+using Yin.API.Extension.AutoFacDI;
+using Yin.API.Extension.Logger;
+using Yin.API.Extension.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Yin.API.Extension;
 
-namespace Yin.Host
+namespace Yin.API
 {
     public class Startup
     {
@@ -24,7 +25,7 @@ namespace Yin.Host
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(HttpCommon.HttpCommonModule.ExceptionMvcOption)
+            services.AddControllers(HttpCommonModule.ExceptionMvcOption)
                 .AddCustomerValidation();
 
             services.AddElasticSearch(Configuration);

@@ -1,6 +1,6 @@
 ﻿namespace Yin.Domain.SeedWork
 {
-    public interface IAggregateRoot : IEntity
+    public interface IAggregateRoot
     {
     }
 }

@@ -15,19 +15,19 @@ namespace Yin.EntityFrameworkCore.Repositories
     /// 通用仓储
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : Entity, IAggregateRoot
+    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class, IAggregateRoot
     {
+        public IUnitOfWork UnitOfWork { get; }
         public MyDbContext Context { get; }
         private DbSet<TEntity> DbSet { get; }
-        public BaseRepository(
-            MyDbContext context
-            )
+
+        public BaseRepository(MyDbContext context)
         {
             Context = context;
             DbSet = Context.Set<TEntity>();
             UnitOfWork = context;
         }
-        public IUnitOfWork UnitOfWork { get; }
+
         public async Task Add(TEntity obj)
         {
             await DbSet.AddAsync(obj);

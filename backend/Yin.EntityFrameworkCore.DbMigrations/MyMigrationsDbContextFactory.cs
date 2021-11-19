@@ -20,7 +20,7 @@ namespace Yin.EntityFrameworkCore.DbMigrations
         private static IConfiguration GetConfiguration()
         {
             return new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Yin.Host/"))
+                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Yin.API/"))
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile(
                     $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json",

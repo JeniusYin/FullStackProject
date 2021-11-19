@@ -11,7 +11,7 @@ namespace Yin.EntityFrameworkCore.Extensions
         public static async Task DispatchDomainEventsAsync(this IMediator mediator, MyDbContext ctx)
         {
             var domainEntities = ctx.ChangeTracker
-                .Entries<Entity>()
+                .Entries<KeyEntity>()
                 .Where(x => x.Entity.DomainEvents != null && x.Entity.DomainEvents.Any());
 
             var domainEvents = domainEntities

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>../Yin.Host/Yin.Application.xml</DocumentationFile>
+    <DocumentationFile>../Yin.API/Yin.Application.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -32,7 +32,6 @@
     <Folder Include="CommandHandlers\User\" />
     <Folder Include="IntegrationEvents\Events\" />
     <Folder Include="IntegrationEvents\Handlers\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

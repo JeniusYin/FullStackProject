@@ -80,32 +80,27 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="P:Yin.Domain.SeedWork.Entity.CreateTime">
+        <member name="P:Yin.Domain.SeedWork.RecordableEntity.CreateTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:Yin.Domain.SeedWork.Entity.UpdateTime">
+        <member name="P:Yin.Domain.SeedWork.RecordableEntity.Creator">
             <summary>
-            更新时间
+            创建人
             </summary>
         </member>
-        <member name="P:Yin.Domain.SeedWork.Entity.IsDelete">
+        <member name="P:Yin.Domain.SeedWork.RecordableEntity.ModifyTime">
             <summary>
-            是否删除
+            修改时间
             </summary>
         </member>
-        <member name="P:Yin.Domain.SeedWork.Entity`1.CreateTime">
+        <member name="P:Yin.Domain.SeedWork.RecordableEntity.ModifiedBy">
             <summary>
-            创建时间
+            修改人
             </summary>
         </member>
-        <member name="P:Yin.Domain.SeedWork.Entity`1.UpdateTime">
-            <summary>
-            更新时间
-            </summary>
-        </member>
-        <member name="P:Yin.Domain.SeedWork.Entity`1.IsDelete">
+        <member name="P:Yin.Domain.SeedWork.RecordableEntity.IsDelete">
             <summary>
             是否删除
             </summary>
