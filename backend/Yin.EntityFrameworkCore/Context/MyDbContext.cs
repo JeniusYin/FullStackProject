@@ -47,6 +47,8 @@ namespace Yin.EntityFrameworkCore.Context
 
         #region DbSet
         public DbSet<AdminUser> AdminUsers { get; set; }
+        public DbSet<AdminRole> AdminRoles { get; set; }
+        public DbSet<AdminUserRole> AdminUserRoles { get; set; }
         #endregion
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)

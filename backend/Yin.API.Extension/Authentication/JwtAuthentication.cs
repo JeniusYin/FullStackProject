@@ -20,6 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddSingleton<IPostConfigureOptions<JwtBearerOptions>, ConfigureJwtBearerOptions>();
 
+            // 一、配置授权服务，也就是具体的规则，例：公司不同权限的门禁卡
             services.AddAuthorization(options =>
             {
                 //基于策略的授权
@@ -28,14 +29,16 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.AddPolicy("NormalOrAdmin", policy => policy.RequireRole("Admin", "Normal"));//或的关系
                 options.AddPolicy("NormalAndAdmin", policy => policy.RequireRole("Admin").RequireRole("Normal"));//且的关系
                 options.AddPolicy("LoginType", policy => policy.RequireClaim("LoginType").RequireRole("Normal")); 
-            });
-
-            services.AddAuthentication(options =>
+            })
+            // 二、配置认证服务，这里是jwt Bearer默认认证，例：光有卡没用，得能识别他们
+            .AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-            }).AddJwtBearer(options =>
+            })
+            // 三、针对JWT的配置，比如门禁是如何识别的，是IC卡还是磁卡
+            .AddJwtBearer(options =>
             {    
                 options.TokenValidationParameters = new TokenValidationParameters
                 {

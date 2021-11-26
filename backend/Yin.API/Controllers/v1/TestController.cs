@@ -14,7 +14,7 @@ using Yin.Infrastructure.Model;
 
 namespace Yin.HttpApi.Controllers.v1
 {
-    [ApiController, ApiVersion("1.0"), Route("api/v{version:apiVersion}/api/[controller]")]
+    [ApiController, ApiVersion("1.0"), Route("api/v{version:apiVersion}/[controller]")]
     public class TestController : MyControllerBase
     {
         private readonly JwtConfigOption _jwtConfigOption;

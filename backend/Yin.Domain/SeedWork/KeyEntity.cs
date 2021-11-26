@@ -1,23 +1,17 @@
 ﻿using MediatR;
 using System;
 using System.Collections.Generic;
+using Yin.Infrastructure.GuidGenerator;
 
 namespace Yin.Domain.SeedWork
 {
     public abstract class KeyEntity
     {
-        int? _requestedHashCode;
-        Guid _Id;
-        public virtual Guid Id
+        public virtual Guid Id { get; protected set; }
+
+        protected virtual void Init()
         {
-            get
-            {
-                return _Id;
-            }
-            protected set
-            {
-                _Id = value;
-            }
+            Id = GuidGenerateHelper.GenerateSequenceGuid();
         }
 
         private List<INotification> _domainEvents;
@@ -67,9 +61,7 @@ namespace Yin.Domain.SeedWork
         {
             if (!IsTransient())
             {
-                if (!_requestedHashCode.HasValue)
-                    _requestedHashCode = this.Id.GetHashCode() ^ 31;
-                return _requestedHashCode.Value;
+                return Id.GetHashCode() ^ 31;
             }
             else
                 return base.GetHashCode();
