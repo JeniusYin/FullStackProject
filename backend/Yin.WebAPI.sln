@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{FF55D3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{3906BE77-894B-42D4-92E9-76B2563AC2F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yin.ElasticSearch", "Yin.ElasticSearch\Yin.ElasticSearch.csproj", "{EC1CD479-1C41-48F8-8BC7-A9C764D65C26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{F347DA18-D672-4E2D-8078-032BE2C13877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F347DA18-D672-4E2D-8078-032BE2C13877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F347DA18-D672-4E2D-8078-032BE2C13877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1CD479-1C41-48F8-8BC7-A9C764D65C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1CD479-1C41-48F8-8BC7-A9C764D65C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1CD479-1C41-48F8-8BC7-A9C764D65C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1CD479-1C41-48F8-8BC7-A9C764D65C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{358B6A92-A09B-43C1-905C-5A7C9B59031D} = {FF55D327-E3B0-4B7B-8AD0-BF8AF2109C71}
 		{38CC961A-55B7-42C5-9154-6A1D1BA40A47} = {FF55D327-E3B0-4B7B-8AD0-BF8AF2109C71}
 		{F347DA18-D672-4E2D-8078-032BE2C13877} = {FF55D327-E3B0-4B7B-8AD0-BF8AF2109C71}
+		{EC1CD479-1C41-48F8-8BC7-A9C764D65C26} = {FF55D327-E3B0-4B7B-8AD0-BF8AF2109C71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B04EC29F-8453-4350-8489-1CEB3E9DBECE}

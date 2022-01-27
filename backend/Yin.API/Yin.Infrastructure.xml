@@ -348,6 +348,16 @@
             <param name="queueName">队列名称(若队列不存在，消息会丢失)</param>
             <returns></returns>
         </member>
+        <member name="M:Yin.Infrastructure.Event.EasyNetQHelper.Subscribe``1(System.String,System.String,System.Func{``0,System.Boolean},System.String)">
+            <summary>
+            默认 Prefetch count = 50
+            </summary>
+            <typeparam name="TEvent"></typeparam>
+            <param name="exchangeName"></param>
+            <param name="routingKey"></param>
+            <param name="action"></param>
+            <param name="remark"></param>
+        </member>
         <member name="M:Yin.Infrastructure.Event.EventExtension.Subscribe``1(Yin.Infrastructure.Event.IntegrationEvenEto{``0},System.Func{System.Threading.Tasks.Task},System.String,Yin.Infrastructure.Redis.IRedisHelper,Microsoft.Extensions.Logging.ILogger)">
             <summary>
             订阅（只进行了消息幂等性校验）

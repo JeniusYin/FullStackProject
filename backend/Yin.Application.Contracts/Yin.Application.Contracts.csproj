@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Yin.ElasticSearch\Yin.ElasticSearch.csproj" />
     <ProjectReference Include="..\Yin.Infrastructure\Yin.Infrastructure.csproj" />
   </ItemGroup>
 

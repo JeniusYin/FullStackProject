@@ -68,5 +68,57 @@ namespace Yin.Infrastructure.Event
                 exchange, routeKey, false, properties,
                 Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message)));
         }
+
+        /// <summary>
+        /// 默认 Prefetch count = 50
+        /// </summary>
+        /// <typeparam name="TEvent"></typeparam>
+        /// <param name="exchangeName"></param>
+        /// <param name="routingKey"></param>
+        /// <param name="action"></param>
+        /// <param name="remark"></param>
+        public void Subscribe<TEvent>(string exchangeName, string routingKey, Func<TEvent, bool> action,
+            string remark = "") where TEvent : class
+        {
+            if (string.IsNullOrEmpty(exchangeName))
+                throw new ArgumentNullException(nameof(exchangeName), $"{nameof(exchangeName)} cannot be null");
+            string queueName = routingKey + ".queue";
+            var advancedBus = _bus.Advanced;
+            var exchange = advancedBus.ExchangeDeclare(name: exchangeName, ExchangeType.Topic);
+            var queue = advancedBus.QueueDeclare(name: queueName);
+            advancedBus.Bind(exchange, queue, routingKey);
+            var advance = advancedBus.Consume(queue, (body, processInfo, info) =>
+            {
+                processInfo.Headers.TryGetValue("cap-msg-id", out object capIdObj);
+                var capId = "null";
+                if (capIdObj is byte[])
+                {
+                    capId = Encoding.UTF8.GetString(capIdObj as byte[]);
+                }
+
+                var message = Encoding.UTF8.GetString(body);
+                _logger.LogInformation($"mq:Subscribe[cap]: 开始处理消息:{remark} {info.Exchange}:{info.Queue}");
+                var model = JsonConvert.DeserializeObject<TEvent>(message);
+
+                if (model != default(TEvent))
+                {
+                    var result = false;
+                    try
+                    {
+                        result = action(model);
+                    }
+                    catch (Exception e)
+                    {
+                        _logger.LogError(e, $"mq: 执行方法出错 {remark}");
+                    }
+                }
+                else
+                {
+                    // 消息异常
+                    _logger.LogError(
+                        "mq:Subscribe[cap][失败] 消息内容异常 {remark} event:{@event}, info:{@info},prop:{@prop}", remark, model, info, processInfo);
+                }
+            });
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Nest;
 using System;
+using Yin.ElasticSearch;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
